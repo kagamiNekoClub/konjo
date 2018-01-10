@@ -1,6 +1,6 @@
 # IDE
-.vscode
-.ieda
+.vscode/
+.ieda/
 
 # node & npm
 npm-debug.log
