@@ -1,0 +1,16 @@
+# IDE
+.vscode
+.ieda
+
+# node & npm
+npm-debug.log
+npm-debug.log*
+/node_modules
+/examples/*/node_modules/
+
+# tmp files
+/tmp
+/lib
+
+#ci
+/coverage

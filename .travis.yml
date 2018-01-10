@@ -1,0 +1,13 @@
+sudo: false
+language: node_js
+addons:
+  sauce_connect: true
+  
+node_js:
+ - 6
+ - 7
+ - lts/* # safety net; don't remove
+ - node # safety net; don't remove
+
+script:
+  - npm run test:ci
