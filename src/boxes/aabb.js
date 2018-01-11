@@ -110,7 +110,9 @@ class AABB extends Base {
    * @param {AABB} aabb - The aabb object of test
    */
   aabbCollision (aabb) {
-    return this.widthRange.collision(aabb.widthRange) && this.heightRange.collision(aabb.heightRange)
+    let wRangeCollision = this.widthRange.collision(aabb.widthRange)
+    let hRangeCollision = this.heightRange.collision(aabb.heightRange)
+    return wRangeCollision && hRangeCollision
   }
 
   /**
