@@ -10,4 +10,5 @@ node_js:
  - node # safety net; don't remove
 
 script:
+  - npm run standard
   - npm run test:ci
