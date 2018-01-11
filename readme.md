@@ -23,3 +23,31 @@
 </p>
 
 A simple 2D collision detection engine.
+
+### Install ###
+
+```shell
+$> npm install konjo
+```
+
+### Current features ###
+
+- Base math lib (vector2/axes)
+- Base box object (AABB/OBB/Sphere)
+- Lightweight
+
+### How to build ###
+
+```sh
+$> npm install
+```
+
+Then, to build the source, run:
+
+```sh
+$> npm run build
+```
+
+### License ###
+
+This content is released under the [MIT](./LICENSE) License.
