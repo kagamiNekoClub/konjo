@@ -1,10 +1,10 @@
 # Konjo
 <p align="center">
-    <a href="https://travis-ci.org/kagamiNekoClub/Konjo">
-        <img src="https://travis-ci.org/kagamiNekoClub/Konjo.svg?branch=master" alt="Build Status">
+    <a href="https://travis-ci.org/kagamiNekoClub/konjo">
+        <img src="https://travis-ci.org/kagamiNekoClub/konjo.svg?branch=master" alt="Build Status">
     </a>
-    <a href="https://coveralls.io/github/kagamiNekoClub/Konjo?branch=master">
-        <img src="https://coveralls.io/repos/github/kagamiNekoClub/Konjo/badge.svg?branch=master" alt="Coverage Status">
+    <a href='https://coveralls.io/github/kagamiNekoClub/konjo?branch=master'>
+        <img src='https://coveralls.io/repos/github/kagamiNekoClub/konjo/badge.svg?branch=master' alt='Coverage Status' />
     </a>
     <a href="https://badge.fury.io/js/konjo">
         <img src="https://badge.fury.io/js/konjo.svg" alt="npm version">
