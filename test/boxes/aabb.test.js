@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import {AABB, Point} from '../../src/main'
+import { AABB, Point, OBB, Sphere } from '../../src/main'
 
 test('default x value of aabb be 0', () => {
   expect(new AABB().x).toBe(0)
@@ -32,26 +32,10 @@ test('did aabb not hit', () => {
   expect(new AABB(0, 0, 20, 20).collision(new AABB(-20, -12, 12, 12))).toBe(false)
 })
 
-test('did obb hit', () => {
-  // TODO: add obb
-})
-
-test('did obb not hit', () => {
-  // TODO: add obb
-})
-
-test('did sphere hit', () => {
-  // TODO: add sphere
-})
-
-test('did sphere not hit', () => {
-  // TODO: add sphere
-})
-
 test('#aabb2obb', () => {
-  // TODO: add obb
+  expect(new AABB(0, 0, 20, 20).aabb2obb()).toMatchObject(new OBB(10, 10, 20, 20, 0))
 })
 
 test('#aabb2sphere', () => {
-  // TODO: add sphere
+  expect(new AABB(0, 0, 20, 20).aabb2sphere()).toMatchObject(new Sphere(10, 10, 20))
 })
