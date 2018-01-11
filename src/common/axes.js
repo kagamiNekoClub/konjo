@@ -21,9 +21,9 @@ class Axes {
    *
    * @return {Number}
    */
-  get radian () { return this._radian }
-  set radian (value) {
-    this._radian = value
+  get degree () { return this._degree }
+  set degree (value) {
+    this._degree = value
     this._setAxes()
   }
 
@@ -45,18 +45,69 @@ class Axes {
    * Returns new axes.
    *
    * @param  {Point} origin - The point of axes origin.
-   * @param  {Number} radian - the rotation of the coordinate system relative
+   * @param  {Number} degree - the rotation of the coordinate system relative
    * to the original coordinate system.
    */
-  constructor (origin, radian) {
+  constructor (origin, degree) {
     this._origin = origin
-    this._radian = radian
-    this._setAxes(radian)
+    this._degree = degree
+    this._setAxes()
+  }
+
+  static _cosTable () {
+    return {
+      0: 1,
+      30: Math.sqrt(3),
+      45: Math.SQRT2 / 2,
+      60: 0.5,
+      90: 0,
+      120: -0.5,
+      135: -Math.SQRT2 / 2,
+      150: -Math.sqrt(3),
+      180: -1
+    }
+  }
+
+  static _sinTable () {
+    return {
+      0: 0,
+      30: 0.5,
+      45: Math.SQRT2 / 2,
+      60: Math.sqrt(3),
+      90: 1,
+      120: Math.sqrt(3),
+      135: Math.SQRT2 / 2,
+      150: 0.5,
+      180: 0
+    }
+  }
+
+  static _in2Pi (value) {
+    value = value % 360
+    return value < 0 ? 360 + value : value
+  }
+
+  static _cos (degree) {
+    let table = Axes._cosTable()
+    degree = Axes._in2Pi(degree)
+    if (table[degree % 180] !== void 0) {
+      return degree > 180 ? -table[degree % 180] : table[degree]
+    }
+    return Math.cos(degree * Math.PI / 180)
+  }
+
+  static _sin (degree) {
+    let table = Axes._sinTable()
+    degree = Axes._in2Pi(degree)
+    if (table[degree % 180] !== void 0) {
+      return degree > 180 ? -table[degree % 180] : table[degree]
+    }
+    return Math.sin(degree * Math.PI / 180)
   }
 
   _setAxes () {
-    this._x = new Vector2(Math.cos(this._radian), Math.sin(this._radian))
-    this._y = new Vector2(-1 * Math.sin(this._radian), Math.cos(this._radian))
+    this._x = new Vector2(Axes._cos(this._degree), Axes._sin(this._degree))
+    this._y = new Vector2(-1 * Axes._sin(this._degree), Axes._cos(this._degree))
   }
 
   /**
@@ -66,7 +117,7 @@ class Axes {
    */
   reAxes () {
     let origin = new Point(-this.origin.x, -this.origin.y)
-    return new Axes(origin, -this.radian)
+    return new Axes(origin, -this.degree)
   }
 
   /**
