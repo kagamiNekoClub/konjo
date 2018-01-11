@@ -162,14 +162,20 @@ class OBB extends Base {
    * @return {AABB}
    */
   obb2aabb () {
+    if (this.angle === 0) {
+      return new AABB(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height)
+    }
     let points = this.points()
     let maxX, maxY, minX, minY
-    maxX = maxY = minX = minY = 0
     points.forEach((point) => {
+      if (maxX === void 0) maxX = point.x
+      if (minX === void 0) minX = point.x
+      if (maxY === void 0) maxY = point.y
+      if (minY === void 0) minY = point.y
       if (point.x > maxX) maxX = point.x
-      if (point.x > minX) minX = point.x
+      if (point.x < minX) minX = point.x
       if (point.y > maxY) maxY = point.y
-      if (point.y > minY) minY = point.y
+      if (point.y < minY) minY = point.y
     })
     return new AABB(minX, minY, maxX - minX, maxY - minY)
   }
@@ -180,7 +186,7 @@ class OBB extends Base {
    * @return {Sphere}
    */
   obb2sphere () {
-    let radius = Math.ceil(Math.sqrt((this.width / 2) ** 2 + (this.height / 2) ** 2))
+    let radius = Math.sqrt((this.width / 2) ** 2 + (this.height / 2) ** 2)
     return new Sphere(this.x, this.y, radius)
   }
 }
