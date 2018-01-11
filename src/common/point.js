@@ -1,6 +1,6 @@
 /**
  * The Point object represents a location in a two-dimensional coordinate system.
- * @memberof Konjo
+ *
  */
 class Point {
   /**

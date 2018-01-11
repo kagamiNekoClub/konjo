@@ -1,7 +1,6 @@
 /**
  * Primary Vector class. Uses Array type for axis storage.
  *
- * @memberof Konjo
  */
 class Vector2 {
   /**
@@ -26,7 +25,7 @@ class Vector2 {
   /**
    * Returns the dot product of this vector by another.
    *
-   * @param   {Vector2} vector2 - Anther vector2.
+   * @param   {Vector2} [vector2=this] - Anther vector2.
    * @return  {Number}
    */
   dot (vector2 = this) {
@@ -36,7 +35,7 @@ class Vector2 {
   /**
    * Returns the cross product of this vector by another.
    *
-   * @param   {Vector2} vector2 - Anther vector2.
+   * @param   {Vector2} [vector2=this] - Anther vector2.
    * @return  {Number}
    */
   cross (vector2 = this) {

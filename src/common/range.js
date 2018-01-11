@@ -1,7 +1,6 @@
 /**
  * An object that represents a one-dimensional range.
  *
- * @memberof Konjo
  */
 class Range {
   /**

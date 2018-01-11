@@ -6,7 +6,7 @@ import Sphere from './sphere'
 
 /**
  * Axis-aligned bounding box class.
- * @memberof Konjo
+ *
  */
 class AABB extends Base {
   get x () { return this._x }
@@ -42,29 +42,29 @@ class AABB extends Base {
   }
 
   /**
-   * The overall width range of this AABB.
+   * The overall width range of this aabb.
    * @return {Range}
    */
   get widthRange () { return this._widthRange }
 
   /**
-   * The overall height range of this AABB.
+   * The overall height range of this aabb.
    * @return {Range}
    */
   get heightRange () { return this._heightRange }
 
   /**
-   * The center point of this ABB.
+   * The center point of this aabb.
    * @return {Point}
    */
   get center () { return this._center }
 
   /**
-   * Returns a axis-aligned bounding box object.
-   * @param {Number} [x=0] - The X coordinate of the upper-left corner of the AABB.
-   * @param {Number} [y=0] - The Y coordinate of the upper-left corner of the AABB.
-   * @param {Number} [width=0] - The overall width of this AABB.
-   * @param {Number} [height=0] - The overall height of this AABB.
+   * Returns an axis-aligned bounding box object.
+   * @param {Number} [x=0] - The X coordinate of the upper-left corner of the aabb.
+   * @param {Number} [y=0] - The Y coordinate of the upper-left corner of the aabb.
+   * @param {Number} [width=0] - The width of this aabb.
+   * @param {Number} [height=0] - The height of this aabb.
    */
   constructor (x = 0, y = 0, width = 0, height = 0) {
     super()
@@ -82,7 +82,7 @@ class AABB extends Base {
   }
 
   /**
-   * Get an array of point objects that span the four vertices of the AABB.
+   * Get an array of point objects that span the four vertices of this aabb.
    *
    * @return {Array<Point>}
    */
@@ -133,10 +133,20 @@ class AABB extends Base {
     return sphere.aabbCollision(this)
   }
 
+  /**
+   * Transforms this object into a new OBB object and returns.
+   *
+   * @return {OBB}
+   */
   aabb2obb () {
     return new OBB(this.center.x, this.center.y, this.width, this.height, 0)
   }
 
+  /**
+   * Transforms this object into a new Sphere object and returns.
+   *
+   * @return {Sphere}
+   */
   aabb2sphere () {
     let radius = this.width > this.height ? this.width : this.height
     return new Sphere(this.center.x, this.center.y, radius)

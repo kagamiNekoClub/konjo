@@ -4,7 +4,6 @@ import Vector2 from './vector2'
 /**
  * An object that represents a two-dimensional coordinate system.
  *
- * @memberof Konjo
  */
 class Axes {
   /**
