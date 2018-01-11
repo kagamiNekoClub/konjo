@@ -1,5 +1,5 @@
 /**
- * An object that represents a one-dimensional range.
+ * An object that represents an one-dimensional range.
  *
  */
 class Range {
