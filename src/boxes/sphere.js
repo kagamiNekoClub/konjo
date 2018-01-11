@@ -74,10 +74,12 @@ class Sphere extends Base {
    * @param {AABB} aabb - The aabb object of test
    */
   aabbCollision (aabb) {
-    let sphereCenter2aabbCenter = (new Vector2(this.x, this.y)).sub(new Vector2(aabb.center.x, aabb.center.y)).abs()
-    let aabbPoint = aabb.points[1]
-    let aabbHalfLength = (new Vector2(aabbPoint.x, aabbPoint.y)).sub(new Vector2(aabb.center.x, aabb.center.y)).abs()
-    let sphereCenter2aabb = sphereCenter2aabbCenter.sub(aabbHalfLength).max(0)
+    let sCenterVector2 = new Vector2(this.x, this.y)
+    let sCenter2aCenter = sCenterVector2.sub(new Vector2(aabb.center.x, aabb.center.y)).abs()
+    let aabbPoint = aabb.points()[1]
+    let apCenterVector2 = new Vector2(aabbPoint.x, aabbPoint.y)
+    let aabbHalfLength = apCenterVector2.sub(new Vector2(aabb.center.x, aabb.center.y)).abs()
+    let sphereCenter2aabb = sCenter2aCenter.sub(aabbHalfLength).max(0)
     return sphereCenter2aabb.dot() <= this.radius ** 2
   }
 
@@ -118,7 +120,7 @@ class Sphere extends Base {
    * @return {OBB}
    */
   sphere2obb (angle = 0) {
-    return new OBB(this.x, this.y, this.radius, this.radius, angle)
+    return new OBB(this.x, this.y, this.radius * 2, this.radius * 2, angle)
   }
 }
 
