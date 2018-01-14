@@ -16,7 +16,8 @@
   "license": "MIT",
   "standard": {
     "ignore": [
-      "lib/"
+      "lib/",
+      "docs/"
     ]
   },
   "repository": {
