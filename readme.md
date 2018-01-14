@@ -30,6 +30,9 @@ A simple 2D collision detection engine.
 $> npm install konjo
 ```
 
+### Documentation ###
+[API Documentation](https://kagaminekoclub.github.io/konjo/)
+
 ### Current features ###
 
 - Base math lib (vector2/axes)
