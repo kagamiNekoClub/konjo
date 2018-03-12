@@ -6,6 +6,7 @@
     <a href='https://coveralls.io/github/kagamiNekoClub/konjo?branch=master'>
         <img src='https://coveralls.io/repos/github/kagamiNekoClub/konjo/badge.svg?branch=master' alt='Coverage Status' />
     </a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2FkagamiNekoClub%2Fkonjo?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2FkagamiNekoClub%2Fkonjo.svg?type=shield"/></a>
     <a href="https://badge.fury.io/js/konjo">
         <img src="https://badge.fury.io/js/konjo.svg" alt="npm version">
     </a>
@@ -23,6 +24,9 @@
 </p>
 
 A simple 2D collision detection engine.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FkagamiNekoClub%2Fkonjo.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FkagamiNekoClub%2Fkonjo?ref=badge_large)
 
 ### Install ###
 
